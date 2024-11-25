@@ -23,7 +23,7 @@ const Home = () => {
       <div className="row d-flex justify-content-center">
         <div className="col-8">
           <label className="form-label d-flex justify-content-center align-items-center">
-            <h1 className="display-3 title">To Do List</h1>
+            <h1 className="display-3 title"> To Do List</h1>
           </label>
           <input
             type="text"
@@ -41,11 +41,13 @@ const Home = () => {
                 key={index}
               >
                 {task}
-                <i className="bi bi-trash" onClick={() => deleteTask(index)}></i>
+                <i className="bi bi-trash trash" onClick={() => deleteTask(index)}></i>
               </li>
             ))}
 
-            <li className="list-group-item">Quantity items left</li>
+            <li className="list-group-item">
+			{tasks.length !== 0 ? `To do's to go: ${tasks.length}` : "There's nothing to do :)"}
+				 </li>
           </ul>
         </div>
       </div>
