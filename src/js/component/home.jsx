@@ -10,6 +10,14 @@ const Home = () => {
     }
   };
 
+  const deleteTask = (index) => {
+	const newArrTask = [...tasks];
+	newArrTask.splice(index,1);
+	setTasks(newArrTask);
+  }
+
+  
+
   return (
     <>
       <div className="row d-flex justify-content-center">
@@ -33,7 +41,7 @@ const Home = () => {
                 key={index}
               >
                 {task}
-                <i className="bi bi-trash"></i>
+                <i className="bi bi-trash" onClick={() => deleteTask(index)}></i>
               </li>
             ))}
 
